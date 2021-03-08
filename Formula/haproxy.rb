@@ -1,8 +1,8 @@
 class Haproxy < Formula
     desc "Reliable, high performance TCP/HTTP load balancer"
     homepage "https://www.haproxy.org/"
-    url "https://www.haproxy.org/download/2.1/src/haproxy-2.1.4.tar.gz"
-    sha256 "51030ff696d7067162b4d24d354044293aecfbb36d7acc2f840c8d928bfe91cd"
+    url "https://www.haproxy.org/download/2.2/src/haproxy-2.2.10.tar.gz"
+    sha256 "a027e9cd8f703ba48dc193f5ae34d9aa152221f67ab58a4e939c96b9f4edd3bc"
     depends_on "openssl@1.1"
     depends_on "pcre"
     depends_on "lua"

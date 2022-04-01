@@ -25,7 +25,7 @@ class Haproxy < Formula
       ]
 
       # We build generic since the Makefile.osx doesn't appear to work
-      system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LDFLAGS=#{ENV.ldflags}", *args
+      system "make", *args
       man1.install "doc/haproxy.1"
       bin.install "haproxy"
     end

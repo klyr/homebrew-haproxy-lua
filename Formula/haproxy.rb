@@ -11,12 +11,6 @@ class Haproxy < Formula
       lua = Formula["lua"]
       args = %W[
         TARGET=osx
-        #USE_KQUEUE=1
-        #USE_POLL=1
-        #USE_PCRE=1
-        #USE_OPENSSL=1
-        #USE_THREAD=1
-        #USE_ZLIB=1
         ADDLIB=-lcrypto
         USE_LUA=1
         LUA_LIB=#{lua.opt_lib}

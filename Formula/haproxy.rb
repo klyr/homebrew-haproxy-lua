@@ -10,13 +10,13 @@ class Haproxy < Formula
     def install
       lua = Formula["lua"]
       args = %W[
-        TARGET=generic
-        USE_KQUEUE=1
-        USE_POLL=1
-        USE_PCRE=1
-        USE_OPENSSL=1
-        USE_THREAD=1
-        USE_ZLIB=1
+        TARGET=osx
+        #USE_KQUEUE=1
+        #USE_POLL=1
+        #USE_PCRE=1
+        #USE_OPENSSL=1
+        #USE_THREAD=1
+        #USE_ZLIB=1
         ADDLIB=-lcrypto
         USE_LUA=1
         LUA_LIB=#{lua.opt_lib}
@@ -25,7 +25,7 @@ class Haproxy < Formula
       ]
 
       # We build generic since the Makefile.osx doesn't appear to work
-      system "make", *args
+      system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LDFLAGS=#{ENV.ldflags}", *args
       man1.install "doc/haproxy.1"
       bin.install "haproxy"
     end
